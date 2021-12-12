@@ -1,3 +1,4 @@
+# что-то пошло не так, это неправильный Т-Т
 import sys
 
 num_of_grades = int(sys.stdin.read())
