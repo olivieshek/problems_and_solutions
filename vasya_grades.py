@@ -1,23 +1,26 @@
-'''
-хорошие: 4 и 5
+import sys
 
-1 подарок = 3 хороших оценки подряд
-'''
+num_of_grades = int(sys.stdin.read())
+v_grades = sys.stdin.read()
+v_grades = v_grades.replace(' ', '')
+grades = []
+for i in v_grades:
+        try:
+            grades.append(int(i))
+        except ValueError:
+            continue
+        if len(grades) == num_of_grades:
+            break
 
-vasya_grades = [4, 5, 5, 5, 5, 3, 4, 3, 5]
-def count_presents(vasya_grades: list) -> int:
+def count_presents(num_of_grades: int, grades: list) -> int:
     good_grades = []
     presents = 0
-    for gr in vasya_grades:
+    for gr in grades:
         if gr == 4 or gr == 5:
             good_grades.append(gr)
             if len(good_grades) == 3:
                 presents += 1
                 good_grades = []
-            else:
-                continue
         else:
             good_grades = []
     return presents
-
-assert count_presents(vasya_grades) == 1
