@@ -37,4 +37,4 @@ decrypted_text = decrypt(encrypted_text, shift)
 
 for i in range(len(alphabet)):
 	decrypted_text = decrypt(encrypted_text, i)
-	print(f'{i}: {decrypted_text}')
+	print(f'{i} -:- {decrypted_text}')
